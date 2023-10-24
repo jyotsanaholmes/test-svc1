@@ -4,14 +4,6 @@ metadata:
   name: test
 spec:
   allocateLoadBalancerNodePorts: true
-  clusterIP: 10.225.53.202
-  clusterIPs:
-    - 10.225.53.202
-  externalTrafficPolicy: Cluster
-  internalTrafficPolicy: Cluster
-  ipFamilies:
-    - IPv4
-  ipFamilyPolicy: SingleStack
   ports:
     - name: http
       nodePort: 32100
@@ -20,7 +12,6 @@ spec:
       targetPort: 7003
   selector:
     app: test1
-  sessionAffinity: None
   type: LoadBalancer
 status:
   loadBalancer: {}
