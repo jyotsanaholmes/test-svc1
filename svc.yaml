@@ -1,8 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: pga-prospecting-unitc-stream
-  namespace: openshift-gitops
+  name: test
 spec:
   allocateLoadBalancerNodePorts: true
   clusterIP: 10.225.53.202
@@ -20,7 +19,7 @@ spec:
       protocol: TCP
       targetPort: 7003
   selector:
-    app: pga-prospecting-unitc-stream
+    app: test1
   sessionAffinity: None
   type: LoadBalancer
 status:
