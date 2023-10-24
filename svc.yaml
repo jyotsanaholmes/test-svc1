@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: pga-prospecting-unitc-stream
+  namespace: openshift-gitops
+spec:
+  allocateLoadBalancerNodePorts: true
+  clusterIP: 10.225.53.202
+  clusterIPs:
+    - 10.225.53.202
+  externalTrafficPolicy: Cluster
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+    - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+    - name: http
+      nodePort: 32100
+      port: 7003
+      protocol: TCP
+      targetPort: 7003
+  selector:
+    app: pga-prospecting-unitc-stream
+  sessionAffinity: None
+  type: LoadBalancer
+status:
+  loadBalancer: {}
